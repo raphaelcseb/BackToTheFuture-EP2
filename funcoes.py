@@ -1,9 +1,15 @@
 def rolar_dados (n):
+
     import random
+
     dados = []
+
     for i in range(0,n):
+
         dado = random.randint(1,6)
+
         dados.append(dado)
+
     return dados
 
 def guardar_dado(dados_rolados, dados_no_estoque, dado_para_guardar):
@@ -13,3 +19,14 @@ def guardar_dado(dados_rolados, dados_no_estoque, dado_para_guardar):
     del(dados_rolados[dado_para_guardar])
     
     return [dados_rolados,dados_no_estoque]
+
+def remover_dado(dados_rolados, dados_no_estoque, dado_para_remover):
+
+    dados_rolados.append(dados_no_estoque[dado_para_remover])
+   
+    del(dados_no_estoque[dado_para_remover])
+    
+    return [dados_rolados,dados_no_estoque]
+
+
+
