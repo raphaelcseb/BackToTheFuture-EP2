@@ -55,7 +55,7 @@ def crescente(dados):
     
     crescente = []
 
-    while len(dados) > 0:
+    while len(crescente) < 4:
 
         menor = 7
 
@@ -75,3 +75,8 @@ def crescente(dados):
     
     return crescente
 
+def calcula_pontos_sequencia_baixa (dados):
+    if crescente(dados) == [1,2,3,4] or crescente(dados) == [2,3,4,5] or crescente(dados) == [3,4,5,6]:
+        return 15
+    else:
+        return 0
