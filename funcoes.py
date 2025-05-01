@@ -152,6 +152,27 @@ def calcula_pontos_quadra (dados):
     else:
         return 0
 
+def calcula_pontos_quina (dados):
+    quina = False
+
+    numeros = {}
+
+    for dado in dados:
+        if dado not in numeros:
+            numeros[dado] = 0
+        numeros[dado] += 1
+    
+    for qtd in numeros.values():
+        if qtd >= 5:
+            quina = True
+    
+    if quina == True:
+        
+        return 50
+   
+    else:
+        
+        return 0
 
 
     
