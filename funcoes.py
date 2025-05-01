@@ -85,3 +85,13 @@ def calcula_pontos_sequencia_baixa (dados):
 
         return 0
 
+def calcula_pontos_sequencia_alta (dados):
+
+    if crescente(dados,5) == [1,2,3,4,5] or crescente(dados,5) == [2,3,4,5,6]:
+        
+        return 30
+    
+    else:
+
+        return 0
+
