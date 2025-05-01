@@ -51,7 +51,9 @@ def calcula_pontos_soma (dados):
 
     return soma
 
-def crescente(dados,tamanho_da_sequencia):
+def crescente(dados,tamanho_da_sequencia):  #Transforma uma lista de dados em uma lista crescente, tirando as repetições
+    
+    #Função auxiliar necessária para o cálculo das sequências alta e baixa, com o tamanho sendo um argumento para que varie de acordo com cada sequência
     
     crescente = []
 
@@ -94,4 +96,42 @@ def calcula_pontos_sequencia_alta (dados):
     else:
 
         return 0
+
+def calcula_pontos_full_house (dados):
+    
+    numeros = {}
+
+    for dado in dados:
+        if dado not in numeros:
+            numeros[dado] = 0
+        numeros[dado] += 1
+    
+    #Ver se tem apenas dois números diferentes
+
+    contador = 0
+    for numero in numeros.keys():
+        contador +=1
+
+    if contador != 2:
+        return 0
+    
+    total = 0
+    for qtd in numeros.values():
+        if qtd == 2 or qtd == 3:
+            total +=1 
+    
+    soma = 0
+
+    if total == 2:
+
+        for dado in dados:
+            soma += dado
+    
+    return soma
+
+
+
+
+
+    
 
