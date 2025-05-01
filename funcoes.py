@@ -32,12 +32,24 @@ def remover_dado(dados_rolados, dados_no_estoque, dado_para_remover):
 
 
 def calcula_pontos_regra_simples (lista):
+   
     dic = {1:0,2:0,3:0,4:0,5:0,6:0}
+   
     for dado in lista:
+       
         dic[dado] += dado
+   
     return dic
 
+def calcula_pontos_soma (dados):
 
+    soma = 0
+
+    for dado in dados:
+
+        soma += dado
+
+    return soma
 
 
 
