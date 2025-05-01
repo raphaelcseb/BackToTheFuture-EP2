@@ -51,5 +51,27 @@ def calcula_pontos_soma (dados):
 
     return soma
 
+def crescente(dados):
+    
+    crescente = []
 
+    while len(dados) > 0:
+
+        menor = 7
+
+        for dado in dados:
+            if dado < menor:
+                menor = dado
+            
+        crescente.append(menor)
+
+        dados_novo = []
+
+        for dado in dados:
+            if dado != menor:
+                dados_novo.append(dado)
+        
+        dados = dados_novo
+    
+    return crescente
 
