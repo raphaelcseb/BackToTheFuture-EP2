@@ -64,25 +64,13 @@ def crescente(dados,tamanho_da_sequencia):  #Transforma uma lista de dados em um
         for dado in dados:
             if dado < menor:
                 menor = dado
-        
-        proximo = menor + 1
-        
-        if proximo not in dados:
-            menor_fora = menor
-
-        while proximo not in dados and proximo < 7:
-            menor +=1
-            if menor not in dados:
-                menor += 1
-            proximo = menor + 1
-        
             
         crescente.append(menor)
 
         dados_novo = []
 
         for dado in dados:
-            if dado != menor and dado!=menor_fora:
+            if dado != menor:
                 dados_novo.append(dado)
         
         dados = dados_novo
@@ -91,8 +79,13 @@ def crescente(dados,tamanho_da_sequencia):  #Transforma uma lista de dados em um
 
 def calcula_pontos_sequencia_baixa (dados):
 
-    if crescente(dados,4) == [1,2,3,4] or crescente(dados,4) == [2,3,4,5] or crescente(dados,4) == [3,4,5,6]:
-
+    if crescente(dados,5)[:4] == [1,2,3,4]:
+        return 15
+    
+    elif crescente(dados,5)[:4] == [2,3,4,5]:
+        return 15
+    
+    elif crescente(dados,5)[:4] == [3,4,5,6] or crescente(dados,5)[1:] == [3,4,5,6] :
         return 15
     
     else:
@@ -230,6 +223,3 @@ def imprime_cartela(cartela):
         else:
             print(f"| {i}: {filler}|    |")
     print("-"*25)
-
-
-print(crescente([6, 3, 4, 5, 1], 4))
